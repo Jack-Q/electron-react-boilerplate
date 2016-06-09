@@ -1,10 +1,8 @@
-# electron-react-boilerplate
+# typescript-electron-react-boilerplate
 
-[![NPM version][npm-image]][npm-url]
-[![Build Status][travis-image]][travis-url]
-[![Dependency Status][david_img]][david_site]
+> The test script are incompatible with typescript, which will be fixed soon
 
-![](./erb-logo.png)
+Quick desktop app development in typescript on the top of Electron.
 
 > Live editing development on desktop app
 
@@ -49,7 +47,7 @@ $ npm run dev
 
 ## DevTools
 
-#### Toggle Chrome DevTools
+### Toggle Chrome DevTools
 
 - OS X: <kbd>Cmd</kbd> <kbd>Alt</kbd> <kbd>I</kbd> or <kbd>F12</kbd>
 - Linux: <kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>I</kbd> or <kbd>F12</kbd>
@@ -57,13 +55,13 @@ $ npm run dev
 
 *See [electron-debug](https://github.com/sindresorhus/electron-debug) for more information.*
 
-#### Toggle Redux DevTools
+### Toggle Redux DevTools
 
 - All platforms: <kbd>Ctrl+H</kbd>
 
 *See [redux-devtools-dock-monitor](https://github.com/gaearon/redux-devtools-dock-monitor) for more information.*
 
-#### Redux Devtools Window
+### Redux Devtools Window
 
 Now you can implement it using [remote-redux-devtools](https://github.com/zalmoxisus/remote-redux-devtools) with a [remote monitor](https://github.com/zalmoxisus/remote-redux-devtools#remote-monitoring) by yourself.
 
@@ -90,20 +88,31 @@ All `.css` file extensions will use css-modules unless it has `.global.css`.
 If you need global styles, stylesheets with `.global.css` will not go through the
 css-modules loader. e.g. `app.global.css`
 
+## Typings
+
+This boilerplate has integrated the required type definitions from Definite Typed and manage them with Typings.
+When adding new components to your project, you may need to also install correspondent type definitions.
+You can use the following command:
+
+```bash
+# replace the package name "react" to the new package, and change the source
+# from the Definite Typed to other source if you neeed to.
+typings install --save dt~react
+```
 
 ## Package
 
 ```bash
-$ npm run package
+npm run package
 ```
 
 To package apps for all platforms:
 
 ```bash
-$ npm run package-all
+npm run package-all
 ```
 
-#### Options
+### Options
 
 - --name, -n: Application name (default: ElectronReact)
 - --version, -v: Electron version (default: latest version)
@@ -115,7 +124,7 @@ Use `electron-packager` to pack your app with `--all` options for darwin (osx), 
 
 `test`, `tools`, `release` folder and devDependencies in `package.json` will be ignored by default.
 
-#### Default Ignore modules
+### Default Ignore modules
 
 We add some module's `peerDependencies` to ignore option as default for application size reduction.
 
@@ -124,7 +133,7 @@ We add some module's `peerDependencies` to ignore option as default for applicat
 
 > **Note:** If you want to use any above modules in runtime, for example: `require('babel/register')`, you should move them from `devDependencies` to `dependencies`.
 
-#### Building windows apps from non-windows platforms
+### Building windows apps from non-windows platforms
 
 Please checkout [Building windows apps from non-windows platforms](https://github.com/maxogden/electron-packager#building-windows-apps-from-non-windows-platforms).
 
@@ -164,6 +173,7 @@ If you want to have native-like User Interface (OS X El Capitan and Windows 10),
 
 
 ## License
+
 MIT © [C. T. Lin](https://github.com/chentsulin)
 
 [npm-image]: https://img.shields.io/npm/v/electron-react-boilerplate.svg?style=flat-square
