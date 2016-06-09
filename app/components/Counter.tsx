@@ -1,14 +1,21 @@
-import React, { Component, PropTypes } from 'react';
+import * as React from 'react';
+import { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
-import styles from './Counter.css';
+const styles = require("./Counter.css") as {
+  // Classs name declared in css file
+  backButton: string,
+  counter: string,
+  btnGroup: string,
+  btn: string,
+};
 
-class Counter extends Component {
+class Counter extends Component<any, any> {
   static propTypes = {
     increment: PropTypes.func.isRequired,
     incrementIfOdd: PropTypes.func.isRequired,
     incrementAsync: PropTypes.func.isRequired,
     decrement: PropTypes.func.isRequired,
-    counter: PropTypes.number.isRequired
+    counter: PropTypes.number.isRequired,
   };
 
   render() {

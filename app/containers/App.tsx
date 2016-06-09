@@ -1,8 +1,10 @@
-import React, { Component, PropTypes } from 'react';
+import * as React from 'react';
+import { Component, PropTypes } from 'react';
+import DevTools from "./DevTools";
 
-export default class App extends Component {
+export default class App extends Component<React.ValidationMap<any>, {}> {
   static propTypes = {
-    children: PropTypes.element.isRequired
+    children: PropTypes.element.isRequired,
   };
 
   render() {
@@ -12,7 +14,6 @@ export default class App extends Component {
         {
           (() => {
             if (process.env.NODE_ENV !== 'production') {
-              const DevTools = require('./DevTools'); // eslint-disable-line global-require
               return <DevTools />;
             }
           })()

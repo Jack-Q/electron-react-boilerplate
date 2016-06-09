@@ -5,7 +5,7 @@ import * as CounterActions from '../actions/counter';
 
 function mapStateToProps(state) {
   return {
-    counter: state.counter
+    counter: state.counter,
   };
 }
 
@@ -13,4 +13,5 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators(CounterActions, dispatch);
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Counter);
+let counter: any = Counter;
+export default connect(mapStateToProps, mapDispatchToProps)(counter);

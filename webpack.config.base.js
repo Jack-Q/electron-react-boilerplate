@@ -5,10 +5,15 @@ export default {
     loaders: [{
       test: /\.jsx?$/,
       loaders: ['babel-loader'],
-      exclude: /node_modules/
+      exclude: /node_modules|typings/
     }, {
       test: /\.json$/,
       loader: 'json-loader'
+    }, {
+      // Loader for typescript
+      test: /\.tsx?$/,
+      loaders: ['ts-loader'],
+      exclude: /node_modules|typings/,
     }]
   },
   output: {
@@ -17,7 +22,7 @@ export default {
     libraryTarget: 'commonjs2'
   },
   resolve: {
-    extensions: ['', '.js', '.jsx'],
+    extensions: ['', '.ts', '.tsx', '.js', '.jsx'],
     packageMains: ['webpack', 'browser', 'web', 'browserify', ['jam', 'main'], 'main']
   },
   plugins: [

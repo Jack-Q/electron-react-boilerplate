@@ -1,9 +1,12 @@
-import React, { Component } from 'react';
+import * as React from 'react';
 import { Link } from 'react-router';
-import styles from './Home.css';
+const styles = require("./Home.css") as {
+  // Classs name declared in css file
+  container: string,
+};
 
 
-export default class Home extends Component {
+export default class Home extends React.Component<void, void> {
   render() {
     return (
       <div>
