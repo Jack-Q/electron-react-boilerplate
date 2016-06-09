@@ -6,7 +6,11 @@ import { syncHistoryWithStore } from 'react-router-redux';
 import routes from './routes';
 import configureStore from './store/configureStore'
 
-const globalStyles = require("./app.global.css"); // tslint:disable-line: no-unused-variable
+// tslint:disable-next-line: no-unused-variable
+const globalStyles = require("./app.global.css") as {
+  // When add a class name in StyleSheet, update the name here
+  // like: "sampleClassName": string,
+};
 
 const store = configureStore();
 

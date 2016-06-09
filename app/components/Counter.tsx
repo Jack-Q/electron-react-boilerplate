@@ -1,23 +1,17 @@
 import * as React from 'react';
-import { Component, PropTypes } from 'react';
+import { Component } from 'react';
 import { Link } from 'react-router';
-const styles = require("./Counter.css") as {
-  // Classs name declared in css file
-  backButton: string,
-  counter: string,
-  btnGroup: string,
-  btn: string,
-};
+const styles = require("./Counter.css");
 
-class Counter extends Component<any, any> {
-  static propTypes = {
-    increment: PropTypes.func.isRequired,
-    incrementIfOdd: PropTypes.func.isRequired,
-    incrementAsync: PropTypes.func.isRequired,
-    decrement: PropTypes.func.isRequired,
-    counter: PropTypes.number.isRequired,
-  };
+type PropertyType = {
+  increment(): void,
+  incrementIfOdd(): void,
+  incrementAsync(): void,
+  decrement(): void,
+  counter: number,
+}
 
+class Counter extends Component<PropertyType, {}> {
   render() {
     const { increment, incrementIfOdd, incrementAsync, decrement, counter } = this.props;
     return (
